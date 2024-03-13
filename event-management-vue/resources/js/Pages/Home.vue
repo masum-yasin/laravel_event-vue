@@ -1,14 +1,12 @@
 <script setup>
-    import NavBarLayout from '@/Layouts/NavBarLayout.vue';
+import NavBarLayout from '@/Layouts/NavBarLayout.vue';
 import { usePage } from '@inertiajs/vue3';
 
-	const { eventtype,categories, user, token} = usePage().props
-    console.log(eventtype);
-// const CategoryName = (id)=>{
-//   const category = categories.find(category =>category.id===id);
-//   return category ? category.name :"unknow category";
-// }
-	
+	const { eventtype,categories, user, token,flashMessage,blog} = usePage().props
+    // console.log(eventtype);
+	console.log(flashMessage);
+	console.log(blog);
+
 </script>
 
 <template>
@@ -797,7 +795,7 @@ import { usePage } from '@inertiajs/vue3';
 				<!-- Pricing Item -->
 				<div class="pricing-item">
 					<div class="pricing-heading">
-						<!-- Title -->
+						<!-- Title --> 
 						
 						<!-- Price -->
 						<div class="price">
@@ -941,7 +939,7 @@ import { usePage } from '@inertiajs/vue3';
 <!--====  End of Sponsors  ====-->
 
 <!--================================
-=            News Posts            =
+=            Blog Looping  Posts            =
 =================================-->
 
 <section class="news section">
@@ -955,11 +953,11 @@ import { usePage } from '@inertiajs/vue3';
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-lg-4 col-md-6 col-sm-8 col-10 m-auto">
+			<div v-for="item in  blog" class="col-lg-4 col-md-6 col-sm-8 col-10 m-auto">
 				<div class="blog-post">
 					<div class="post-thumb">
 						<a href="news-single.html">
-							<img src="/frontend/images/news/post-thumb-one.jpg" alt="post-image" class="img-fluid">
+							<img  v-bind:src="'uploads/'+ item.image"alt="post-image" class="img-fluid">
 						</a>
 					</div>
 					<div class="post-content">
@@ -988,72 +986,7 @@ import { usePage } from '@inertiajs/vue3';
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-4 col-md-6 col-sm-8 col-10 m-auto">
-				<div class="blog-post">
-					<div class="post-thumb">
-						<a href="news-single.html">
-							<img src="/frontend/images/news/post-thumb-two.jpg" alt="post-image" class="img-fluid">
-						</a>
-					</div>
-					<div class="post-content">
-						<div class="date">
-							<h4>20<span>May</span></h4>
-						</div>
-						<div class="post-title">
-							<h2><a href="news-single.html">Elementum purus id ultrices.</a></h2>
-						</div>
-						<div class="post-meta">
-							<ul class="list-inline">
-								<li class="list-inline-item">
-									<i class="fa fa-user-o"></i>
-									<a href="#">Admin</a>
-								</li>
-								<li class="list-inline-item">
-									<i class="fa fa-heart-o"></i>
-									<a href="#">350</a>
-								</li>
-								<li class="list-inline-item">
-									<i class="fa fa-comments-o"></i>
-									<a href="#">30</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 m-md-auto col-sm-8 col-10 m-auto">
-				<div class="blog-post">
-					<div class="post-thumb">
-						<a href="news-single.html">
-							<img src="/frontend/images/news/post-thumb-three.jpg" alt="post-image" class="img-fluid">
-						</a>
-					</div>
-					<div class="post-content">
-						<div class="date">
-							<h4>20<span>May</span></h4>
-						</div>
-						<div class="post-title">
-							<h2><a href="news-single.html">Elementum purus id ultrices.</a></h2>
-						</div>
-						<div class="post-meta">
-							<ul class="list-inline">
-								<li class="list-inline-item">
-									<i class="fa fa-user-o"></i>
-									<a href="#">Admin</a>
-								</li>
-								<li class="list-inline-item">
-									<i class="fa fa-heart-o"></i>
-									<a href="#">350</a>
-								</li>
-								<li class="list-inline-item">
-									<i class="fa fa-comments-o"></i>
-									<a href="#">30</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
+			
 		</div>
 	</div>
 </section>

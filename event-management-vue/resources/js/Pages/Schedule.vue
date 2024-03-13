@@ -44,8 +44,8 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-12">
-				<div v-for ="item in schedule" class="schedule-tab">
+			<div v-for ="item in schedule" class="col-lg-4 my-4">
+				<div class="schedule-tab">
 					<ul class="d-flex nav nav-pills text-center">
 					  <li class="nav-item">
 					    <a class="nav-link active" href="#nov20" data-toggle="pill">
@@ -54,10 +54,12 @@
 					    	<span>END: {{item.ending_time}}</span>
 					    </a>
 					  </li>
-					
-				
 					</ul>
 				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
 				<div class="schedule-contents bg-schedule">
 					<div class="tab-content" id="pills-tabContent">
 					  <div class="tab-pane fade show active schedule-item" id="nov20">

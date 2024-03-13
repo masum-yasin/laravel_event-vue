@@ -48,9 +48,7 @@ Route::middleware('auth')->group(function () {
 // Route::get('/', function (){
 //     return Inertia::render('Home');
 // })->name('home');
-Route::get('about', function (){
-    return Inertia::render('About');
-})->name('about');
+
 // Route::get('speaker',function(){
 //     return Inertia::render('Speaker');
 // })->name('speaker');
@@ -67,12 +65,12 @@ Route::get('about', function (){
 
 Route::get('/', [FrontendHomeController::class,'index'])->name('home');
 // Route::get('review', [FrontendHomeController::class,'review'])->name('review');
-// Route::get('blog',[FrontendHomeController::class,'blog'])->name('blog');
+Route::get('blog',[FrontendHomeController::class,'blog'])->name('blog');
 // Route::get('singleblog',[FrontendHomeController::class,'SingeBlog'])->name('singleblog');
 Route::get('speaker',[FrontendHomeController::class,'speaker'])->name('speaker');
 // Route::get('speakerdetail',[FrontendHomeController::class,'SpeakerDetail'])->name('speakerdetail');
 
-// Route::get('/about', [FrontendHomeController::class,'about'])->name('about');
+Route::get('/about', [FrontendHomeController::class,'about'])->name('about');
 Route::get('eventschedule',[FrontendHomeController::class,'schedule'])->name('eventschedule');
 
 

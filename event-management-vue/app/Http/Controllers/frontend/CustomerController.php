@@ -27,11 +27,13 @@ class CustomerController extends Controller
    public function create(){
     return view('frontend.customer.login');
    }
+
+
    public function login(Request $request){
       $customer = $request->all();
      
       if(Auth::guard('customer')->attempt(['email'=>$customer['email'], 'password'=>$customer['password']])){
-          return redirect('/');
+          return redirect('/')->with('msg', 'Welcome Dear Customer');
       }
       else{
           return view('frontend.customer.login');
